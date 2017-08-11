@@ -5,6 +5,10 @@
   float: left;
 }
 
+.box:hover {
+  background-color: silver;
+}
+
 .colorBox {
   border: 1px solid black;
   height: 20px;
@@ -13,7 +17,7 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: teal;
 }
 
 h1 {

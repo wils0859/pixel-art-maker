@@ -5,12 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Create the grid
 function createGrid() {
-
   let placement = document.querySelector('.container')
-console.log(placement);
   for (let i = 0; i < 3750; i++) {
     let row = document.createElement('div')
     row.classList.add('box')
+    let pixelID = row.id=(`pixel${[i]}`)
     placement.appendChild(row)
   }
 }
@@ -24,9 +23,13 @@ function createColors() {
     let rowColor = document.createElement('div')
     rowColor.classList.add('colorBox')
     rowColor.style.backgroundColor = currentColor
-
     place.appendChild(rowColor)
-  }
+
+
+  } let listen = document.querySelector('.container')
+    listen.addEventListener('click', function() {
+      console.log(event.target.id)
+    })
 }
 // let colors = ['black', 'white', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 // for (let c = 0; 0 < colors.length; c++) {
