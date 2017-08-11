@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  createGrid(), createColors()
+  createGrid(),
+  createColors()
 })
 
 // Create the grid
@@ -16,10 +17,13 @@ console.log(placement);
 
 function createColors() {
   let place = document.querySelector('.colors')
-  for (let n = 0; n < 10; n++) {
+  const colors = ['black', 'white', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'cyan']
+  for (let c = 0; c < colors.length; c++) {
+    let currentColor = colors[c]
+    console.log(currentColor + " is the current color")
     let rowColor = document.createElement('div')
     rowColor.classList.add('colorBox')
-    // rowColor.color = currentColor
+    rowColor.style.backgroundColor = currentColor
 
     place.appendChild(rowColor)
   }
