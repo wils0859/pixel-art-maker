@@ -35,7 +35,3 @@ function createColors() {
       console.log(event.target.id)
     })
 }
-// let colors = ['black', 'white', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
-// for (let c = 0; 0 < colors.length; c++) {
-//   let currentColor = colors[c]
-// }
