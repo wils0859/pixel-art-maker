@@ -1,7 +1,10 @@
+// Wrapper
 document.addEventListener('DOMContentLoaded', function() {
-  createGrid(),
+  createGrid()
   createColors()
 })
+// Color selected - global
+selectColor = 'blue'
 
 // Create the grid
 function createGrid() {
@@ -12,26 +15,31 @@ function createGrid() {
     let pixelID = row.id=(`pixel${[i]}`)
     placement.appendChild(row)
   }
+
+// Paint
+  var listenToGrid = document.querySelector('.container')
+  listenToGrid.addEventListener('mousedown', function() {
+  event.target.style.backgroundColor = selectColor
+
+  })
 }
 
+// Create the palette
 function createColors() {
   let place = document.querySelector('.colors')
-  const colors = ['black', 'white', 'red', '#FF5310', 'yellow', 'green', 'blue', 'indigo', 'violet', 'cyan']
+  const colors = ['black', 'white', 'red', '#FF5310', 'yellow', 'green', 'navy', 'lightblue', 'indigo', 'violet']
   for (let c = 0; c < colors.length; c++) {
     let currentColor = colors[c]
     let rowColor = document.createElement('div')
     rowColor.classList.add('colorBox')
     rowColor.style.backgroundColor = currentColor
-    let pixelID2 = rowColor.id=(`color${[c]}`)
+    rowColor.id=(`${colors[c]}`)
     place.appendChild(rowColor)
+  }
 
-
-  } let listen = document.querySelector('.container')
-    listen.addEventListener('click', function() {
-      console.log(event.target.id)
-    })
-    let listen2 = document.querySelector('.colors')
-    listen2.addEventListener('click', function() {
-      console.log(event.target.id)
-    })
+  //Pick a color
+  var listenToColors = document.querySelector('.colors')
+  listenToColors.addEventListener('click', function() {
+  selectColor = event.target.id
+  })
 }
